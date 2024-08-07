@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_play_button_down():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/map_menu.tscn")
 
 
 

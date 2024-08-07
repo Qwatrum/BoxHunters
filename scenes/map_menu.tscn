@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://bruysor400c2p"]
+
+[ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="1_pk6q6"]
+[ext_resource type="FontFile" uid="uid://dex13tamkyymh" path="res://fonts/Anonymous_Pro/AnonymousPro-Regular.ttf" id="1_ujlbm"]
+[ext_resource type="Script" path="res://scenes/map_menu.gd" id="2_piwwr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pie08"]
+bg_color = Color(0.241767, 0.836324, 0.413634, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.2, 0.654902, 0.32549, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riji1"]
+bg_color = Color(0.215686, 0.717647, 0.356863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.148223, 0.492902, 0.242062, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_jpabq"]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_ujlbm")
+Button/styles/hover = SubResource("StyleBoxFlat_pie08")
+Button/styles/normal = SubResource("StyleBoxFlat_riji1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a24rs"]
+font = ExtResource("1_pk6q6")
+font_size = 56
+font_color = Color(0.215686, 0.717647, 0.356863, 1)
+
+[node name="MapMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jpabq")
+script = ExtResource("2_piwwr")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.929412, 0.929412, 0.929412, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 71.0
+grow_horizontal = 2
+text = "BoxHunters"
+label_settings = SubResource("LabelSettings_a24rs")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = -307.0
+offset_right = -430.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Map_1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 216.0
+offset_right = 231.0
+offset_bottom = 275.0
+text = "Map 1"
+
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="Map_1" to="." method="_on_map_1_button_down"]
