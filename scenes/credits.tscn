@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://cssgm180ky2fy"]
+
+[ext_resource type="FontFile" uid="uid://dex13tamkyymh" path="res://fonts/Anonymous_Pro/AnonymousPro-Regular.ttf" id="1_l10w1"]
+[ext_resource type="Script" path="res://scenes/credits.gd" id="2_hegpi"]
+[ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="3_fui40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pie08"]
+bg_color = Color(0.241767, 0.836324, 0.413634, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.2, 0.654902, 0.32549, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riji1"]
+bg_color = Color(0.215686, 0.717647, 0.356863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.148223, 0.492902, 0.242062, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_0bnph"]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_l10w1")
+Button/styles/hover = SubResource("StyleBoxFlat_pie08")
+Button/styles/normal = SubResource("StyleBoxFlat_riji1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4a1vd"]
+font = ExtResource("3_fui40")
+font_size = 56
+font_color = Color(0.215686, 0.717647, 0.356863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nuvbs"]
+font = ExtResource("1_l10w1")
+font_size = 32
+font_color = Color(0.215686, 0.717647, 0.356863, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0bnph")
+script = ExtResource("2_hegpi")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.929412, 0.929412, 0.929412, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 71.0
+grow_horizontal = 2
+text = "BoxHunters"
+label_settings = SubResource("LabelSettings_4a1vd")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = 124.5
+offset_right = 122.0
+offset_bottom = 183.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " Go Back "
+
+[node name="CreditsText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -212.0
+offset_right = 162.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits:
+
+Code: Qwatrum
+Art: Qwatrum
+Music: -
+Font: Anonymous Pro"
+label_settings = SubResource("LabelSettings_nuvbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
