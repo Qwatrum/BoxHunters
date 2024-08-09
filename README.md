@@ -5,5 +5,5 @@
 ## Credits:
 - Code: Qwatrum
 - Art: Qwatrum
-- Music: -
+- Music: Abydos_Music on Pixabay (fun-retro-game)
 - Font: Anonymous Pro

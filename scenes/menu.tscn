@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://doke60escx4m4"]
+[gd_scene load_steps=9 format=3 uid="uid://doke60escx4m4"]
 
 [ext_resource type="FontFile" uid="uid://dex13tamkyymh" path="res://fonts/Anonymous_Pro/AnonymousPro-Regular.ttf" id="1_a0sk8"]
 [ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="1_rdx6n"]
@@ -37,6 +37,11 @@ Button/styles/normal = SubResource("StyleBoxFlat_riji1")
 [sub_resource type="LabelSettings" id="LabelSettings_4a1vd"]
 font = ExtResource("1_rdx6n")
 font_size = 56
+font_color = Color(0.215686, 0.717647, 0.356863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ysd1t"]
+font = ExtResource("1_a0sk8")
+font_size = 24
 font_color = Color(0.215686, 0.717647, 0.356863, 1)
 
 [node name="Menu" type="Control"]
@@ -92,6 +97,19 @@ text = "Play"
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = " Credits "
+
+[node name="Title2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -3.0
+offset_top = 572.0
+offset_right = -3.0
+offset_bottom = 629.0
+grow_horizontal = 2
+text = "(unfinished)"
+label_settings = SubResource("LabelSettings_ysd1t")
+horizontal_alignment = 1
 
 [connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/Credits" to="." method="_on_credits_button_down"]

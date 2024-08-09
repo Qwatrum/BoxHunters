@@ -10,6 +10,7 @@ var golden_box = preload("res://scenes/golden_box.tscn")
 
 var boxes_chaught = 0
 
+var players = []
 var enemies = []
 var golden_boxes = []
 
@@ -18,6 +19,10 @@ func _ready():
 	var inste_player = player.instantiate()
 	add_child(inste_player)
 	inste_player.position = start_pos
+	players.append(inste_player)
+	
+	create_enemies()
+	create_golden_boxes()
 
 func create_enemies():
 	
@@ -32,13 +37,24 @@ func create_golden_boxes():
 		var inste = golden_box.instantiate()
 		add_child(inste)
 		golden_boxes.append(inste)
+		inste.id = inste
 
-func box_caught():
-	
+func box_caught(box):
+	golden_boxes.erase(box)
+	box.queue_free()
 	boxes_chaught += 1
 	if boxes_chaught >= golden_box_amount:
-		print("You won")
+		
+		players[0].win()
+		for e in enemies:
+			e.SPEED = 0
 		
 func player_caught():
-	
-	print("You loose")
+	for e in golden_boxes:
+		e.queue_free()
+	for f in enemies:
+		f.queue_free()
+	players[0].loose()
+
+func player_pos():
+	return players[0].position

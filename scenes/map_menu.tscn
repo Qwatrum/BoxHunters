@@ -87,9 +87,9 @@ text = "Back"
 
 [node name="Map_1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 74.0
+offset_left = 75.0
 offset_top = 216.0
-offset_right = 231.0
+offset_right = 232.0
 offset_bottom = 275.0
 text = "Map 1"
 
